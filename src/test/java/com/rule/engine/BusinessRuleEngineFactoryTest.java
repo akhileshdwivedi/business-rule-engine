@@ -2,13 +2,13 @@ package com.rule.engine;
 
 import com.rule.engine.model.Product;
 import com.rule.engine.service.MemberShipRuleEngine;
-import com.rule.engine.service.PhysicalProductEngine;
-import com.rule.engine.service.ProductRuleEngine;
+import com.rule.engine.service.PhysicalProductRuleEngine;
+import com.rule.engine.service.BookRuleEngine;
 import com.rule.engine.service.VideoRuleEngine;
 import com.rule.engine.serviceImpl.MemberShipRuleEngineImpl;
-import com.rule.engine.serviceImpl.PhysicalProductEngineImpl;
-import com.rule.engine.serviceImpl.ProductRuleEngineImpl;
-import com.rule.engine.serviceImpl.VideoRuleEngineEngineImpl;
+import com.rule.engine.serviceImpl.PhysicalProductRuleEngineImpl;
+import com.rule.engine.serviceImpl.BookRuleEngineImpl;
+import com.rule.engine.serviceImpl.VideoRuleEngineImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,16 +36,16 @@ public class BusinessRuleEngineFactoryTest {
 
     @Test
     public void getBookRuleEngine(){
-        ProductRuleEngine productRuleEngine = (ProductRuleEngine)businessRuleEngineFactory.getRuleEngine(Product.BOOK);
-        Assertions.assertThat(productRuleEngine).isInstanceOf(ProductRuleEngineImpl.class);
-        Assertions.assertThat(productRuleEngine).isNotNull();
+        BookRuleEngine bookRuleEngine = (BookRuleEngine)businessRuleEngineFactory.getRuleEngine(Product.BOOK);
+        Assertions.assertThat(bookRuleEngine).isInstanceOf(BookRuleEngineImpl.class);
+        Assertions.assertThat(bookRuleEngine).isNotNull();
     }
 
     @Test
     public void getPhysicalProductRuleEngine(){
-        PhysicalProductEngine physicalProductEngine =  (PhysicalProductEngine)businessRuleEngineFactory.getRuleEngine(Product.PHYSICAL_PRODUCT);
-        Assertions.assertThat(physicalProductEngine).isInstanceOf(PhysicalProductEngineImpl.class);
-        Assertions.assertThat(physicalProductEngine).isNotNull();
+        PhysicalProductRuleEngine physicalProductRuleEngine =  (PhysicalProductRuleEngine)businessRuleEngineFactory.getRuleEngine(Product.PHYSICAL_PRODUCT);
+        Assertions.assertThat(physicalProductRuleEngine).isInstanceOf(PhysicalProductRuleEngineImpl.class);
+        Assertions.assertThat(physicalProductRuleEngine).isNotNull();
     }
 
     @Test
@@ -58,7 +58,7 @@ public class BusinessRuleEngineFactoryTest {
     @Test
     public void getVideoRuleEngine(){
         VideoRuleEngine videoRuleEngineEngine =  (VideoRuleEngine)businessRuleEngineFactory.getRuleEngine(Product.VIDEO);
-        Assertions.assertThat(videoRuleEngineEngine).isInstanceOf(VideoRuleEngineEngineImpl.class);
+        Assertions.assertThat(videoRuleEngineEngine).isInstanceOf(VideoRuleEngineImpl.class);
         Assertions.assertThat(videoRuleEngineEngine).isNotNull();
     }
 
